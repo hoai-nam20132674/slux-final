@@ -2,7 +2,7 @@
 @section('slide-header')
 	@include('frontEndUser.layout.slide-header')
 @endsection()
-@section('product-list')
+@section('blog-content')
 	<div class="container">
 		<div class="row">
 			<div class="content">
@@ -121,12 +121,12 @@
 							@if($blog->display ==1)
 								<div class="col-md-4">
 									<div class="blog-new-item box-shadows" style="border: 1px solid #d4d4d4;"> 
-				                        <a href="#">
+				                        <a href="{{url('/'.$blog["url"])}}">
 				                            <img src="{{url('/uploads/images/blogs/'.$blog["image"])}}" class="img-responsive img-box img-thumbnail"> 
 				                        </a>
 					                    <br>
 					                    <br>
-				                    	<h4><a href="#"  style="color: #000;">{{$blog->title}}</a></h4>
+				                    	<h4><a href="{{url('/'.$blog["url"])}}"  style="color: #000;">{{$blog->title}}</a></h4>
 				                        <div class="clear"></div>
 									</div>
 								</div>

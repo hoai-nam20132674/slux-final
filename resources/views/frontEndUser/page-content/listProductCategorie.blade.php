@@ -37,9 +37,9 @@
 			                                    </div>
 			                                    <div class="separator clear-left">
 			                                        <p class="btn-add">
-			                                            <i class="fa fa-shopping-cart"></i><a href="http://www.jquery2dotnet.com" class="hidden-sm">Add to cart</a></p>
+			                                            <i class="fa fa-shopping-cart" style="color: #fff;"></i><a href="http://www.jquery2dotnet.com" class="hidden-sm">MUA NGAY</a></p>
 			                                        <p class="btn-details">
-			                                            <i class="fa fa-list"></i><a href="http://www.jquery2dotnet.com" class="hidden-sm">More details</a></p>
+			                                            <i class="fa fa-list" style="color: #fff;"></i><a href="http://www.jquery2dotnet.com" class="hidden-sm">XEM THÊM</a></p>
 			                                    </div>
 			                                    <div class="clearfix">
 			                                    </div>
@@ -53,11 +53,18 @@
 					</div>
 					
 					<div class="pagination text-center">
-					  	<a href="#">&laquo;</a>
-					  	@for($i=1; $i<$products->lastPage();$i++)
-					  		<a href="{{$products->url($i)}}">{{$i}}</a>
+						<?php 
+							$i=1;
+						?>
+						@if( $products->currentPage() != 1)
+					  		<a href="{{$products->url($products->currentPage()-1)}}">&laquo;</a>
+					  	@endif
+					  	@for($i; $i<=$products->lastPage();$i++)
+					  		<a href="{{$products->url($i)}}" class="{{($products->currentPage()==$i) ? 'active' : ''}}">{{$i}}</a>
 					  	@endfor
-					  	<a href="#">&raquo;</a>
+					  	@if( $products->currentPage() != $products->lastPage())
+					  		<a href="{{$products->url($products->currentPage()+1)}}">&raquo;</a>
+					  	@endif
 					</div>
 				</div>
 				<div class="sidebar">

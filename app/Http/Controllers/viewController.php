@@ -34,7 +34,7 @@ class viewController extends Controller
                     return View('frontEndUser.page-content.newsCategorie',['cate'=>$cate,'blogs'=>$blogs,'products'=>$products]);
                 }
                 if($cate->type ==2){
-                    $blogs = Blogs::select()->orderBy('created_at','DESC')->get();
+                    $blogs = Blogs::select()->orderBy('created_at','DESC')->paginate(10);
                     $products = Products::select()->orderBy('created_at','DESC')->get();
                     return View('frontEndUser.page-content.listNewsCategorie',['blogs'=>$blogs,'cate'=>$cate,'products'=>$products]);
                 }
@@ -143,7 +143,7 @@ class viewController extends Controller
     }
     public function getProductCategorie($id){
         $categories = $this->getIdCategorieChildren($id);
-        $products = Products::whereIn('categorie_id',$categories)->paginate(1);
+        $products = Products::whereIn('categorie_id',$categories)->orderBy('created_at','DESC')->paginate(9);
         // dd($products);
         return $products;
     }

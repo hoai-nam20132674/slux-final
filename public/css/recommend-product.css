@@ -23,8 +23,6 @@
 }
 .col-item .price
 {
-    /*width: 50%;*/
-    float: left;
     margin-top: 5px;
 }
 
@@ -32,6 +30,9 @@
 {
     line-height: 20px;
     margin: 0;
+}
+.col-item .price h5.price-text-color{
+    margin: 0 0 5px 0;
 }
 
 .price-text-color
@@ -67,10 +68,13 @@
 
 .col-item .separator p
 {
-    line-height: 20px;
+    /*line-height: 20px;*/
     margin-bottom: 0;
     margin-top: 10px;
     text-align: center;
+    background: red;
+    font-size: 15px;
+    border-radius: 4px;
 }
 
 .col-item .separator p i
@@ -88,11 +92,14 @@
     border-right: 1px solid #E1E1E1;
 }
 
-.col-item .btn-details
+.col-item p.btn-details
 {
     width: 50%;
     float: left;
-    padding-left: 10px;
+    background: #2775c5;
+    font-size: 15px;
+    border-radius: 4px;
+    /*padding-left: 10px;*/
 }
 .controls
 {

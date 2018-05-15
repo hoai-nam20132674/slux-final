@@ -21,7 +21,7 @@
 							<div class="blog-item">
 								<div class="row"> 
 				                    <div class="col-xs-12 col-sm-3 col-md-3">
-				                        <a href="#">
+				                        <a href="{{url('/'.$blog["url"])}}">
 				                            <img src="{{url('/uploads/images/blogs/'.$blog["image"])}}" class="img-responsive img-box img-thumbnail"> 
 				                        </a>
 				                    </div> 
@@ -50,7 +50,22 @@
 			                <hr>
 						@endforeach	
 					</div>
+					<div class="pagination text-center">
+						<?php 
+							$i=1;
+						?>
+						@if( $blogs->currentPage() != 1)
+					  		<a href="{{$blogs->url($blogs->currentPage()-1)}}">&laquo;</a>
+					  	@endif
+					  	@for($i; $i<=$blogs->lastPage();$i++)
+					  		<a href="{{$blogs->url($i)}}" class="{{($blogs->currentPage()==$i) ? 'active' : ''}}">{{$i}}</a>
+					  	@endfor
+					  	@if( $blogs->currentPage() != $blogs->lastPage())
+					  		<a href="{{$blogs->url($blogs->currentPage()+1)}}">&raquo;</a>
+					  	@endif
+					</div>
 				</div>
+				
 			</div>
 			<div class="sidebar">
 				<div class="col-md-3">

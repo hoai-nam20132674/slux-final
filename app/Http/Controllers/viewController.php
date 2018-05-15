@@ -29,7 +29,9 @@ class viewController extends Controller
         if(count($categorie)>0){
             foreach($categorie as $cate){
                 if($cate->type ==0){
-                    return View('frontEndUser.page-content.newsCategorie');
+                    $blogs = Blogs::select()->orderBy('created_at','DESC')->get();
+                    $products=Products::select()->orderBy('created_at','DESC')->get();
+                    return View('frontEndUser.page-content.newsCategorie',['cate'=>$cate,'blogs'=>$blogs,'products'=>$products]);
                 }
                 if($cate->type ==2){
                     $blogs = Blogs::select()->orderBy('created_at','DESC')->get();
@@ -141,7 +143,7 @@ class viewController extends Controller
     }
     public function getProductCategorie($id){
         $categories = $this->getIdCategorieChildren($id);
-        $products = Products::whereIn('categorie_id',$categories)->get();
+        $products = Products::whereIn('categorie_id',$categories)->paginate(1);
         // dd($products);
         return $products;
     }

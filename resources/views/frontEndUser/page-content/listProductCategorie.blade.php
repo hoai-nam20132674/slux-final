@@ -54,11 +54,9 @@
 					
 					<div class="pagination text-center">
 					  	<a href="#">&laquo;</a>
-					  	<a href="#">1</a>
-					  	<a class="active" href="#">2</a>
-					  	<a href="#">3</a>
-					  	<a href="#">4</a>
-					  	<a href="#">5</a>
+					  	@for($i=1; $i<$products->lastPage();$i++)
+					  		<a href="{{$products->url($i)}}">{{$i}}</a>
+					  	@endfor
 					  	<a href="#">&raquo;</a>
 					</div>
 				</div>

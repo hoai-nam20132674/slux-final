@@ -115,7 +115,7 @@
 						<div class="row">
 							<div class="col-md-9">
 								<ul class="nav nav-tabs">
-								    <li class="active"  "><a data-toggle="tab" href="#gt" style="color: #000;" >GIỚI THIỆU</a></li>
+								    <li class="active"><a data-toggle="tab" href="#gt" style="color: #000;" >GIỚI THIỆU</a></li>
 								    <li ><a data-toggle="tab" href="#tskt" style="color: #000;">THÔNG SỐ KỸ THUẬT</a></li>
 								    
 								    
@@ -214,11 +214,7 @@
 							                                            <h5 style="text-transform: uppercase; font-weight: 700;">{{$prs->name}}</h5>
 							                                            <h5 class="price-text-color">{{$prs->price}}</h5>
 							                                        </div>
-							                                        <div class="rating hidden-sm col-md-12">
-							                                            <i class="price-text-color fa fa-star"></i><i class="price-text-color fa fa-star">
-							                                            </i><i class="price-text-color fa fa-star"></i><i class="price-text-color fa fa-star">
-							                                            </i><i class="fa fa-star"></i>
-							                                        </div>
+							                                       
 							                                    </div>
 							                                    <div class="separator clear-left">
 							                                        <p class="btn-add">
